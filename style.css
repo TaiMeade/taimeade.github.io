@@ -3,7 +3,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #121212;
-    color: #E0E0E0;
+    color: #dfd3d3;
     margin: 0;
     line-height: 1.6;
 }
@@ -21,7 +21,7 @@ body {
 
 .brand {
     font-size: 1.5rem;
-    color: #BB86FC;
+    color: #00A8E8;
 }
 
 .nav-links {
@@ -32,7 +32,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #dfd3d3;
     transition: color 0.3s;
     font-size: larger;
     position: relative;
@@ -62,7 +62,7 @@ body {
 }
 
 .header-text {
-    margin-left: 2.5%;
+    margin-left: 2%;
     margin-top: 9%;
     font-size: 30px;
 }
@@ -88,7 +88,7 @@ body {
     display: flex;
     text-decoration: none;
     font-size: 20px;
-    background-color: #03DAC6;
+    background-color: #1e1e1e;
     padding: 5% 10%;
     align-items: center;
     gap: 7px;
@@ -98,7 +98,11 @@ body {
 }
 
 .social-links li a:hover {
-    background-color: lightblue;
+    background-color: #0081A7;
+}
+
+.social-links li a span {
+    color: #dfd3d3;
 }
 
 /* Section Styles */
@@ -108,7 +112,7 @@ section {
 }
 
 h1, h2 {
-    color: #BB86FC;
+    color: #00A8E8;
 }
 
 /* Form Styles */
@@ -134,12 +138,12 @@ form input, form textarea {
     border: 1px solid #282828;
     border-radius: 5px;
     background-color: #121212;
-    color: #E0E0E0;
+    color: #dfd3d3;
 }
 
 form button {
     background-color: #FF5722;
-    color: #E0E0E0;
+    color: #dfd3d3;
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 5px;
@@ -175,7 +179,7 @@ form button:hover {
 .subtitle {
     font-size: 40px;
     font-weight: 600;
-    color: #BB86FC;
+    color: #00A8E8;
     margin-top: 0;
     margin-bottom: 15px;
 }
@@ -236,5 +240,5 @@ form button:hover {
     align-items: center;
     margin: auto;
     width: 95%;
-    box-shadow: 10px 10px #050505;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.5);
 }
