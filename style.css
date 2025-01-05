@@ -27,20 +27,78 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #A0A0A0;
+    color: #fff;
     transition: color 0.3s;
     font-size: larger;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    position: relative;
 }
 
-.nav-links a:hover {
-    color: #03DAC6;
+.nav-links li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+#home {
+    width: 100%;
+    height: 60vh;
+    background-image: url("./images/backgroundImage.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.header-text {
+    margin-left: 2.5%;
+    margin-top: 9%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 50px;
+}
+
+.social-links {
+    display: flex;
+    align-content: flex-start;
+    width: 33%;
+    gap: 1.5rem;
+}
+
+.social-links li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-links li a {
+    display: flex;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #03DAC6;
+    padding: 5% 10%;
+    align-items: center;
+    gap: 7px;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+    margin-right: 30px;
+}
+
+.social-links li a:hover {
+    background-color: lightblue;
 }
 
 /* Section Styles */
@@ -100,11 +158,10 @@ form button:hover {
 .row {
     display: flex;
     justify-content: space-between;
-
 }
 
 .about-col-1 {
-    flex-basis: 35%;
+    flex-basis: 37%;
 }
 .about-col-1 img {
     width: 100%;
@@ -112,18 +169,20 @@ form button:hover {
 }
 
 .about-col-2 {
-    flex-basis: 60%;
+    flex-basis: 57%;
 }
 
 .subtitle {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 600;
     color: #BB86FC;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .tab-titles {
     display: flex;
-    margin: 20px 0 30px;
+    margin: 0 0 30px;
 }
 
 .tab-links {
@@ -172,7 +231,10 @@ form button:hover {
     border-radius: 20px;
     padding-left: 15px;
     padding-top: 15px;
+    padding-bottom: 6px;
+    padding-right: 15px;
     align-items: center;
     margin: auto;
     width: 95%;
+    box-shadow: 10px 10px #050505;
 }
