@@ -58,7 +58,7 @@ form {
     border: 1px solid #282828;
     border-radius: 5px;
     max-width: 400px;
-    margin: auto;
+    margin: 1rem;
 }
 
 form label {
