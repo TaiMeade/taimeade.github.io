@@ -183,6 +183,7 @@ form button:hover {
     color: #ff004f;
     margin-top: 0;
     margin-bottom: 15px;
+    text-decoration: underline;
 }
 
 .tab-titles {
@@ -275,7 +276,7 @@ form button:hover {
 .layer {
     width: 100%;
     height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.8), #ff004f);
     border-radius: 15px;
     position: absolute;
     left: 0;
@@ -357,9 +358,9 @@ form button:hover {
     font-size: 1rem;
     line-height: 1.5rem;
     height: fit-content;
-    background: transparent;
+    background: #008bb9;
     padding: .25rem .5rem;
-    border: 1px solid #007EA7;
+    border: 1px solid #00678a;
     border-radius: 9999px;
     align-items: center;
     justify-content: center;
@@ -374,5 +375,5 @@ form button:hover {
 }
 
 .chips a:hover {
-    background-color: #007EA7;
+    background-color: #00678a;
 }
