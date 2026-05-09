@@ -27,7 +27,7 @@ The first week was humbling. I was handed a codebase I didn't write, with patter
 
 **How often the right answer is "keep it simple."** There were moments where I started reaching for a clever solution and my instinct was wrong. There's a reason *KISS* (Keep It Simple Stupid) is such a popular principle.
 
-## Looking Forward
+## Looking Ahead
 
 I'm excited about where Angel is heading. There's meaningful work to do across the stack, and the team is genuinely invested in building something great. I'm learning faster than I ever did in a classroom.
 
