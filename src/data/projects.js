@@ -50,6 +50,17 @@ export const projects = [
     githubUrl: null,
     liveUrl: 'https://www.mountainempiresepticservice.com/',
   },
+  {
+    id: 6,
+    title: "Gravely's Grading Service",
+    description:
+      'A professional business website for a locally owned grading service company in Southwest Virginia. Features service listings, a coverage map, Google reviews integration, and a contact/quote request form.',
+    image: '/images/gravely-grading.png',
+    chips: ['HTML', 'CSS', 'JavaScript'],
+    category: 'website',
+    githubUrl: null,
+    liveUrl: 'https://taimeade.github.io/gravely-grading',
+  },
 ]
 
 export const categories = [
