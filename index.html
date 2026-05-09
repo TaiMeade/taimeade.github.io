@@ -1,167 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tai Meade</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <section class="background">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <span class="brand"></span>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <!-- <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li> -->
-                <li><a href="#contact" onclick="openModal('contactModal')">Contact Me</a></li>
-            </ul>
-            
-        </nav>
-
-        <!-- Profile section -->
-        <section id="profile" class="card">
-            <img id="profile-pic" src="./images/profilePic.jpg">
-            <div id="profile-content">
-              <h3 class="subtitle">Computer Science</h3>
-              <h2 class="primary-text">Tai<br>Meade.</h2>
-              <span><a href="https://www.radford.edu/index.html" class="link-in-text" target="_blank">Radford University</a></span>
-            </div>
-        </section>
-
-        <!-- Social Profiles section -->
-        <section id="social" class="card">
-            <!-- <i class="fa fa-twitter" style="font-size:48px"></i> -->
-            <a class="fa fa-linkedin" style="font-size:64px" href="https://www.linkedin.com/in/tai-meade" target="_blank" title="LinkedIn Profile"></a>
-            <a class="fa fa-github" style="font-size:64px" href="https://www.github.com/TaiMeade" target="_blank" title="GitHub Profile"></a>
-            <a class="fa fa-file" style="font-size: 56px;" href="./docs/TaiMeade-Resume.pdf" target="_blank" title="Resume"></a>
-        </section>
-
-        <section id="about" class="card">
-          <div id="about-content">
-            <h2 class="primary-text">About Me</h2>
-            <p class="subtitle">Hello! My name is Tai, and I'm a recent Computer Science graduate from Radford University. I graduated with a 4.0 GPA and was named the 
-              <a href="https://www.facebook.com/photo?fbid=1263298025796908&set=pcb.1263298399130204" target="_blank" class="link-in-text">2025 Dean's Scholar for Computer Science</a>. 
-              I am passionate about research, data science, and software development. I love using my knowledge to make lives easier and more enjoyable for others using scripts, programs, or applications!
-            </p>
-
-            <p class="subtitle">You can see my diploma <a class="link-in-text" href="./docs/RadfordDiploma.pdf" target="_blank" title="Diploma">here</a>.</p>
-          </div>
-          
-        </section>
-
-        <section id="projects" class="card">
-          <h2 class="primary-text" style="margin-left: 2%;">Projects</h2>
-          <div id="projects-content">
-            <div class="work-item">
-                    <img src="./images/theVaultLogo.png">
-                    <div class="layer">
-                        <h3>The Vault</h3>
-                        <p>
-                            This is a simple, local password-saving application 
-                            that prioritizes user privacy. Unlike mainstream 
-                            apps, it stores all passwords directly on the 
-                            user's device, eliminating the risk of data 
-                            breaches from server hacks and placing security 
-                            responsibility with the user.
-                        </p>
-                        <div class="chips">
-                            <a target="_blank" href="https://www.electronjs.org/">Electron</a>
-                            <a target="_blank" href="https://www.w3schools.com/html/html_intro.asp">HTML</a>
-                            <a target="_blank" href="https://www.w3schools.com/css/css_intro.asp">CSS</a>
-                            <a target="_blank" href="https://www.w3schools.com/js/">JS</a>
-                        </div>
-                        <a target="_blank" href="https://github.com/TaiMeade/passwordManager" class="external-link"><i class="fa fa-external-link-square"></i></a>
-                    </div>
-                </div>
-            <div class="work-item">
-                <img src="./images/Impastas_Logo.png">
-                <div class="layer">
-                    <h3>Impastas - iCook</h3>
-                    <p>
-                        This project was done for my Software Engineering 
-                        class in a group of 5 students. Served as a social
-                        media like app for cooking enthusiasts.
-                    </p>
-                    <div class="chips">
-                        <a target="_blank" href="https://www.w3schools.com/typescript/typescript_intro.php">TypeScript</a>
-                        <a target="_blank" href="https://tailwindcss.com/">Tailwind</a>
-                        <a target="_blank" href="https://www.prisma.io/">Prisma</a>
-                    </div>
-                    <a target="_blank" href="https://github.com/TaiMeade/SoftwareEngineering1TeamProject" class="external-link"><i class="fa fa-external-link-square"></i></a>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="./images/Prime-and-Composite-Numbers.png">
-                <div class="layer">
-                    <h3>Prime Or Composite</h3>
-                    <p>
-                        A solo project used to determine if a number is prime or composite. 
-                        If it is composite, then all factors are listed, else states it is prime.
-                        Used the Babylonian method to improve square root calculation speed.
-                        Highly optimized using to support large numbers up to 10<sup>18</sup>.
-                    </p>
-                    <div class="chips">
-                        <a target="_blank" href="https://www.rust-lang.org/">Rust</a>
-                    </div>
-                    <a target="_blank" href="https://github.com/TaiMeade/primeOrComposite" class="external-link"><i class="fa fa-external-link-square"></i></a>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="./images/nametag.jpg">
-                <div class="layer">
-                    <h3>Nametag Creator</h3>
-                    <p>
-                        Creates a pdf from a .csv file containing formatted nametags. This
-                        was used for the NYSC in 2025 to create nametags for all delegates.
-                    </p>
-                    <div class="chips">
-                        <a target="_blank" href="https://www.python.org/">Python</a>
-                        <a target="_blank" href="https://streamlit.io/">Streamlit</a>
-                    </div>
-                    <a target="_blank" href="https://github.com/TaiMeade/nyscNameTagCreatorGUI" class="external-link"><i class="fa fa-external-link-square"></i></a>
-                </div>
-            </div>
-          </div>
-        </section>
-
-        <div class="modal" id="contactModal">
-          <div class="modal-content">
-            <span class="close" id="closeButton1" onclick="closeModal('contactModal')"> &times;</span>
-            <form action="#" class="container" onsubmit="sendMail(event)">
-              <h2>Contact Me:</h2>
-              <label for="name">Name:</label><br>
-              <input type="text" id="name" name="name" required=""><br>
-
-              <label for="email">Email:</label><br>
-              <input type="email" id="email" name="email" required=""><br>
-
-              <label for="message">Message:</label><br>
-              <textarea id="message" name="message" rows="5" required=""></textarea><br>
-
-              <button type="submit" id="sendContact">Send</button>
-            </form>
-          </div>
-          
-        </div>
-
-    </section>
-
-    <!--  -->
-
-    <script src="index.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-      (function(){
-          emailjs.init({
-            publicKey: "1AkByoDhGNFhkKR8P",
-          });
-      })();
-    </script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

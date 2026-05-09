@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --color-accent:           #5EEAD4;
+  --color-accent-dim:       #2DD4BF;
+  --color-accent-muted:     rgba(94, 234, 212, 0.15);
+
+  --color-gradient-a:       #060912;
+  --color-gradient-b:       #0b1929;
+  --color-gradient-c:       #0f2137;
+  --color-gradient-d:       #160d2e;
+
+  --color-text-primary:     #E2E8F0;
+  --color-text-secondary:   #94A3B8;
+  --color-text-muted:       #64748B;
+
+  --color-surface-glass:    rgba(255, 255, 255, 0.07);
+  --color-glass-border:     rgba(255, 255, 255, 0.12);
+  --blur-glass:             16px;
+  --shadow-glass:           0 8px 32px rgba(0, 0, 0, 0.4);
+
+  --color-surface-elevated: rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Global Resets ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-gradient-a);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Animated Gradient Background ──────────────────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    125deg,
+    var(--color-gradient-a) 0%,
+    var(--color-gradient-d) 20%,
+    var(--color-gradient-b) 40%,
+    var(--color-gradient-c) 60%,
+    var(--color-gradient-d) 80%,
+    var(--color-gradient-a) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 14s ease infinite;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ─── Frosted Glass ──────────────────────────────────────────── */
+.glass {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-glass);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-gradient-a);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ─── Page transitions ───────────────────────────────────────── */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
