@@ -248,24 +248,11 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, computed } from 'vue'
 import GlassCard from '@/components/shared/GlassCard.vue'
 import TechChip from '@/components/shared/TechChip.vue'
 import { experience } from '@/data/experience.js'
 import { projects, categories } from '@/data/projects.js'
-
-const route = useRoute()
-
-// Scroll to a section requested via query param (e.g. when navigating from /blog)
-onMounted(() => {
-  const target = route.query.scrollTo
-  if (target) {
-    setTimeout(() => {
-      document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
-    }, 150)
-  }
-})
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })

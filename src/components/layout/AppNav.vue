@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useContactModal } from '@/composables/useContactModal'
 
@@ -117,10 +117,12 @@ function scrollToSection(id) {
 async function goToSection(id) {
   menuOpen.value = false
   if (route.name === 'home') {
+    activeSection.value = id
     scrollToSection(id)
   } else {
-    // Navigate home first, HomeView picks up the scrollTo query on mount
-    await router.push({ path: '/', query: { scrollTo: id } })
+    await router.push({ name: 'home' })
+    await nextTick()
+    scrollToSection(id)
   }
 }
 

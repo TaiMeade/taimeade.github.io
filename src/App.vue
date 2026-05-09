@@ -6,8 +6,8 @@
     <AppNav />
     <main class="flex-1 flex flex-col relative z-10">
       <RouterView v-slot="{ Component }">
-        <Transition name="fade" mode="out-in">
-          <component :is="Component" :key="route.fullPath" />
+        <Transition name="fade">
+          <component :is="Component" :key="route.name" />
         </Transition>
       </RouterView>
     </main>
