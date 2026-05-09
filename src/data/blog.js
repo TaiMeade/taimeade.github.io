@@ -19,7 +19,7 @@ export const posts = [
     title: 'Starting as a Software Engineer at Legna Software',
     description:
       'Reflections on my first weeks building Angel — a cloud-based procurement platform for the wood products industry — and what I\'ve learned jumping into a real production codebase.',
-    date: '2026-04-30',
+    date: '2026-05-01',
     tags: ['career', 'vue', 'dotnet', 'reflection'],
     load: () => import('../posts/starting-at-legna-software.md?raw'),
   },

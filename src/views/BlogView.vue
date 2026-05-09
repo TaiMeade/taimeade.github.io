@@ -18,7 +18,7 @@
           <div class="flex flex-wrap items-center gap-2 mb-3">
             <span class="date-text">{{ formatDate(post.date) }}</span>
             <span class="dot" />
-            <span v-for="tag in post.tags" :key="tag" class="tag-chip">#{{ tag }}</span>
+            <span v-for="tag in post.tags" :key="tag" class="tag-chip">{{ toTitleCase(tag) }}</span>
           </div>
           <h2 class="post-title">{{ post.title }}</h2>
           <p class="post-desc">{{ post.description }}</p>
@@ -53,6 +53,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { posts } from '@/data/blog.js'
+import { toTitleCase } from '@/utils/string'
 
 const router = useRouter()
 

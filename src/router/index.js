@@ -29,8 +29,7 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  // Let the in-page scroll logic handle scrolling; don't force top on navigation
-  scrollBehavior: () => null,
+  scrollBehavior: () => ({ top: 0 }),
 })
 
 // Update page title on navigation

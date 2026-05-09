@@ -30,7 +30,6 @@
           :class="{ 'nav-link--active': route.name === 'blog' }"
         >
           Blog
-          <span class="nav-badge">Soon</span>
         </RouterLink>
       </nav>
 
@@ -66,7 +65,6 @@
           @click="menuOpen = false"
         >
           Blog
-          <span class="nav-badge">Soon</span>
         </RouterLink>
       </div>
     </Transition>

@@ -7,7 +7,7 @@
     <main class="flex-1 flex flex-col relative z-10">
       <RouterView v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
-          <component :is="Component" />
+          <component :is="Component" :key="route.fullPath" />
         </Transition>
       </RouterView>
     </main>
@@ -19,8 +19,11 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 import AppNav from '@/components/layout/AppNav.vue'
 import ContactModal from '@/components/ContactModal.vue'
+
+const route = useRoute()
 
 const mouseX = ref(50)
 const mouseY = ref(50)

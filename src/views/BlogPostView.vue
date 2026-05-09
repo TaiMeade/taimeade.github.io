@@ -29,7 +29,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <span class="date-text">{{ formatDate(post.date) }}</span>
             <span class="dot" />
-            <span v-for="tag in post.tags" :key="tag" class="tag-chip">#{{ tag }}</span>
+            <span v-for="tag in post.tags" :key="tag" class="tag-chip">{{ toTitleCase(tag) }}</span>
           </div>
           <h1 class="text-3xl md:text-4xl font-bold text-[color:var(--color-text-primary)] leading-tight">
             {{ post.title }}
@@ -51,6 +51,7 @@ import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import { posts } from '@/data/blog.js'
+import { toTitleCase } from '@/utils/string'
 
 const route  = useRoute()
 const router = useRouter()
