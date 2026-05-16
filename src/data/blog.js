@@ -15,6 +15,15 @@
  */
 export const posts = [
   {
+    slug: 'getting-married-and-honeymoon',
+    title: 'Getting Married and Going on My Honeymoon',
+    description:
+      'A reflection on getting married and heading off on our honeymoon — one of the biggest weeks of my life.',
+    date: '2026-05-16',
+    tags: ['life', 'personal', 'reflection'],
+    load: () => import('../posts/getting-married-and-honeymoon.md?raw'),
+  },
+  {
     slug: 'starting-at-legna-software',
     title: 'Starting as a Software Engineer at Legna Software',
     description:
