@@ -54,6 +54,18 @@
               ></textarea>
             </div>
 
+            <!-- Honeypot: hidden from real users; bots fill it and get dropped -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="modal-website">Website</label>
+              <input
+                id="modal-website"
+                v-model="form.website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
             <Transition name="fade">
               <p v-if="feedback" :class="feedbackClass" class="text-sm font-medium">
                 {{ feedback }}
@@ -73,45 +85,20 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch } from 'vue'
-import emailjs from '@emailjs/browser'
+import { watch } from 'vue'
 import { useContactModal } from '@/composables/useContactModal'
+import { useContactForm } from '@/composables/useContactForm'
 
 const { show, close } = useContactModal()
+const { form, sending, feedback, feedbackClass, submit, clearFeedback, startTimer } = useContactForm()
 
-emailjs.init({
-  publicKey: '1AkByoDhGNFhkKR8P',
-  blockHeadless: true,
-  limitRate: { id: 'portfolio-contact', throttle: 10000 },
-})
-
-const form     = reactive({ name: '', email: '', message: '' })
-const sending  = ref(false)
-const feedback = ref('')
-const feedbackClass = ref('')
-
-// Clear feedback when modal is reopened
-watch(show, (val) => { if (val) feedback.value = '' })
-
-async function submit() {
-  sending.value  = true
-  feedback.value = ''
-  try {
-    await emailjs.send('service_o1nb8bf', 'template_7x07rj7', {
-      name:    form.name,
-      email:   form.email,
-      message: form.message,
-    })
-    feedback.value     = "Message sent! I'll get back to you soon."
-    feedbackClass.value = 'text-[color:var(--color-accent)]'
-    form.name = form.email = form.message = ''
-  } catch {
-    feedback.value     = 'Something went wrong. Please try again.'
-    feedbackClass.value = 'text-red-400'
-  } finally {
-    sending.value = false
+// Reset feedback and restart the human-delay timer each time the modal opens.
+watch(show, (val) => {
+  if (val) {
+    clearFeedback()
+    startTimer()
   }
-}
+})
 </script>
 
 <style scoped>
@@ -177,6 +164,15 @@ async function submit() {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .form-input::placeholder { color: var(--color-text-muted); }
+
+/* Honeypot: kept in the DOM (so bots find it) but off-screen for humans */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form-input:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px var(--color-accent-muted);

@@ -56,6 +56,18 @@
             ></textarea>
           </div>
 
+          <!-- Honeypot: hidden from real users; bots fill it and get dropped -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="contact-website">Website</label>
+            <input
+              id="contact-website"
+              v-model="form.website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
           <!-- Feedback -->
           <Transition name="fade">
             <p v-if="feedback" :class="feedbackClass" class="text-sm font-medium">
@@ -75,43 +87,10 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-import emailjs from '@emailjs/browser'
 import GlassCard from '@/components/shared/GlassCard.vue'
+import { useContactForm } from '@/composables/useContactForm'
 
-emailjs.init({
-  publicKey: '1AkByoDhGNFhkKR8P',
-  blockHeadless: true,
-  limitRate: { id: 'portfolio-contact', throttle: 10000 },
-})
-
-const form = reactive({ name: '', email: '', message: '' })
-const sending = ref(false)
-const feedback = ref('')
-const feedbackClass = ref('')
-
-async function submit() {
-  sending.value = true
-  feedback.value = ''
-
-  try {
-    await emailjs.send('service_o1nb8bf', 'template_7x07rj7', {
-      name:    form.name,
-      email:   form.email,
-      message: form.message,
-    })
-    feedback.value = 'Message sent! I\'ll get back to you soon.'
-    feedbackClass.value = 'text-[color:var(--color-accent)]'
-    form.name = ''
-    form.email = ''
-    form.message = ''
-  } catch {
-    feedback.value = 'Something went wrong. Please try again.'
-    feedbackClass.value = 'text-red-400'
-  } finally {
-    sending.value = false
-  }
-}
+const { form, sending, feedback, feedbackClass, submit } = useContactForm()
 </script>
 
 <style scoped>
@@ -138,6 +117,15 @@ async function submit() {
 
 .form-input::placeholder {
   color: var(--color-text-muted);
+}
+
+/* Honeypot: kept in the DOM (so bots find it) but off-screen for humans */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .form-input:focus {
