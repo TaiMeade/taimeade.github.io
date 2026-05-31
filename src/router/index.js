@@ -19,6 +19,12 @@ const routes = [
     component: () => import('@/views/BlogPostView.vue'),
     meta: { title: 'Blog — Tai Meade' },
   },
+  {
+    path: '/services',
+    name: 'services',
+    component: () => import('@/views/ServicesView.vue'),
+    meta: { title: 'Services — Tai Meade' },
+  },
   // Catch-all — redirect old routes and any unknown paths to home
   {
     path: '/:pathMatch(.*)*',

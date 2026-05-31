@@ -20,8 +20,14 @@
           {{ link.label }}
         </button>
 
-        <!-- Contact opens modal -->
-        <button class="nav-link" @click="openContact">Contact</button>
+        <!-- Services — true router link -->
+        <RouterLink
+          to="/services"
+          class="nav-link"
+          :class="{ 'nav-link--active': route.name === 'services' }"
+        >
+          Services
+        </RouterLink>
 
         <!-- Blog — true router link -->
         <RouterLink
@@ -31,6 +37,12 @@
         >
           Blog
         </RouterLink>
+
+        <!-- Contact opens modal — styled as a CTA, pinned to the end -->
+        <button class="nav-cta" @click="openContact">
+          <v-icon size="16">mdi-email-outline</v-icon>
+          Contact
+        </button>
       </nav>
 
       <!-- Mobile hamburger -->
@@ -56,7 +68,14 @@
           {{ link.label }}
         </button>
 
-        <button class="nav-link w-full text-left" @click="openContact">Contact</button>
+        <RouterLink
+          to="/services"
+          class="nav-link w-full"
+          :class="{ 'nav-link--active': route.name === 'services' }"
+          @click="menuOpen = false"
+        >
+          Services
+        </RouterLink>
 
         <RouterLink
           to="/blog"
@@ -66,6 +85,11 @@
         >
           Blog
         </RouterLink>
+
+        <button class="nav-cta w-full justify-center mt-1" @click="openContact">
+          <v-icon size="16">mdi-email-outline</v-icon>
+          Contact
+        </button>
       </div>
     </Transition>
   </header>
@@ -164,6 +188,28 @@ function openContact() {
 .nav-link--active {
   color: var(--color-accent);
   background: var(--color-accent-muted);
+}
+
+/* Contact CTA — visually distinct from the plain nav links */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0a0e1a;
+  background: var(--color-accent);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover {
+  background: var(--color-accent-dim);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(94, 234, 212, 0.25);
 }
 
 .nav-badge {
