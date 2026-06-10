@@ -18,7 +18,7 @@
          invisible — so they sparkle all over the screen. -->
     <i
       v-for="glint in glints"
-      :key="glint.id"
+      :key="`${glint.id}-${glint.seq}`"
       class="glint"
       :style="glintStyle(glint)"
       @animationiteration="reposition(glint)"
@@ -46,6 +46,7 @@ const rand = (min, max) => min + Math.random() * (max - min)
 function randomGlint(id) {
   return {
     id,
+    seq: 0,               // bumped on reposition to remount → animation restarts at 0%
     top: rand(6, 94),     // keep clear of the very edges (spikes are ~28px)
     left: rand(5, 95),
     scale: rand(0.7, 1.3),
@@ -59,11 +60,17 @@ const glints = reactive(
 )
 
 // Called at the end of each pulse (glint is at opacity 0) → no visible jump.
+// Changing animation-duration on a running animation does NOT restart it —
+// the browser keeps the start time and the phase jumps mid-pulse, flashing
+// the glint at its new spot. Bumping `seq` swaps the element's key so the
+// animation truly restarts from 0% (invisible) with the new duration.
 function reposition(glint) {
   glint.top = rand(6, 94)
   glint.left = rand(5, 95)
   glint.scale = rand(0.7, 1.3)
   glint.duration = rand(5, 9)
+  glint.delay = 0
+  glint.seq++
 }
 
 function glintStyle(glint) {
