@@ -46,7 +46,7 @@
           <!-- Footer: price + CTA -->
           <div class="card-footer mt-auto">
             <span v-if="service.startingPrice" class="price-text">{{ service.startingPrice }}</span>
-            <span v-else class="price-text price-text--quote">Contact for a quote</span>
+            <span v-else class="price-text price-text--quote">Want a Quote?</span>
             <button class="cta-btn" @click="openContact">
               Get in touch
               <v-icon size="16">mdi-arrow-right</v-icon>

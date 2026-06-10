@@ -45,7 +45,7 @@ export const projects = [
     description:
       'A professional business website for a locally owned septic service company in Southwest Virginia. Features service listings, a coverage map, Google reviews integration, and a contact/quote request form.',
     image: '/images/mountain-empire-septic-service.png',
-    chips: ['HTML', 'CSS', 'JavaScript'],
+    chips: ['Vue', 'CSS', 'JavaScript'],
     category: 'website',
     githubUrl: null,
     liveUrl: 'https://www.mountainempiresepticservice.com/',
@@ -56,7 +56,7 @@ export const projects = [
     description:
       'A professional business website for a locally owned grading service company in Southwest Virginia. Features service listings, a coverage map, Google reviews integration, and a contact/quote request form.',
     image: '/images/gravely-grading.png',
-    chips: ['HTML', 'CSS', 'JavaScript'],
+    chips: ['Vue', 'CSS', 'JavaScript'],
     category: 'website',
     githubUrl: null,
     liveUrl: 'https://taimeade.github.io/gravely-grading',

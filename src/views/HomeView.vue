@@ -1,7 +1,9 @@
 <template>
   <!-- ─── HERO ──────────────────────────────────────────────── -->
-  <section id="home" class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-20">
-    <div class="max-w-5xl w-full mx-auto">
+  <section id="home" class="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-20">
+    <!-- Nebula radiance pooled behind the hero -->
+    <div class="hero-glow" aria-hidden="true" />
+    <div class="max-w-5xl w-full mx-auto relative z-10">
       <GlassCard>
         <div class="flex flex-col md:flex-row items-center gap-10 p-4 md:p-8">
           <div class="flex-shrink-0">
@@ -35,6 +37,9 @@
               </a>
               <a href="/docs/TaiMeade-Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-btn" title="Resume">
                 <v-icon size="22">mdi-file-document-outline</v-icon>
+              </a>
+              <a href="/docs/Tai_Meade_Web_Design_Flyer_V3.pdf" target="_blank" rel="noopener noreferrer" class="social-btn" title="Web Design Flyer">
+                <v-icon size="22">mdi-application-outline</v-icon>
               </a>
             </div>
             <div class="flex flex-wrap gap-3 justify-center md:justify-start mt-2">
@@ -348,6 +353,22 @@ section[id] { scroll-margin-top: 4.5rem; }
 }
 
 /* Hero */
+/* Soft cyan/violet nebula glow concentrated behind the hero card.
+   Static (no animation) and feathered with transparent stops, so it
+   costs nothing at runtime. */
+.hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(900px, 115%);
+  height: min(640px, 80%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background:
+    radial-gradient(42% 46% at 50% 50%, rgba(94, 234, 212, 0.10), transparent 70%),
+    radial-gradient(58% 62% at 62% 58%, rgba(124, 58, 237, 0.10), transparent 72%),
+    radial-gradient(40% 44% at 36% 64%, rgba(56, 120, 220, 0.07), transparent 72%);
+}
 .profile-photo {
   box-shadow: 0 0 0 3px var(--color-accent-muted), 0 8px 32px rgba(0, 0, 0, 0.5);
 }

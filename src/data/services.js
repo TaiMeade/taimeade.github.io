@@ -14,25 +14,10 @@ export const services = [
       'SEO basics & fast load times',
       'Deployment & hosting setup',
     ],
-    chips: ['Vue', 'HTML', 'CSS', 'JavaScript'],
+    chips: ['Vue', 'JavaScript'],
   },
   {
     id: 2,
-    icon: 'mdi-cog-sync',
-    title: 'Automation Scripting & Improvements',
-    description:
-      'Custom scripts that take repetitive, manual work off your plate — from data entry and reporting to file processing and integrations.',
-    startingPrice: null, // priced per project — shows "Contact for a quote"
-    features: [
-      'Automate repetitive tasks',
-      'Data extraction & web scraping',
-      'Spreadsheet & report automation',
-      'Workflow & integration scripting',
-    ],
-    chips: ['Python', 'Bash', 'APIs'],
-  },
-  {
-    id: 3,
     icon: 'mdi-wrench',
     title: 'Website Maintenance',
     description:
@@ -45,5 +30,21 @@ export const services = [
       'Small feature additions',
     ],
     chips: ['Vue', 'JavaScript'],
+  },
+  
+  {
+    id: 3,
+    icon: 'mdi-cog-sync',
+    title: 'Automation Scripting & Improvements',
+    description:
+      'Custom scripts that take repetitive, manual work off your plate — from data entry and reporting to file processing and integrations.',
+    startingPrice: null, // priced per project — shows "Want a Quote?"
+    features: [
+      'Automate repetitive tasks',
+      'Data extraction & web scraping',
+      'Spreadsheet & report automation',
+      'Workflow & integration scripting',
+    ],
+    chips: ['Python', 'Bash', 'APIs'],
   },
 ]

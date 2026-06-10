@@ -45,27 +45,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Animated Gradient Background ──────────────────────────── */
-@keyframes gradientShift {
-  0%   { background-position: 0% 0%; }
-  25%  { background-position: 100% 0%; }
-  50%  { background-position: 100% 100%; }
-  75%  { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
+/* ─── Static Deep-Space Gradient Backdrop ───────────────────── */
+/* Motion now comes from the SpaceBackground component's star/nebula
+   layers (compositor-only opacity/transform), so this base gradient is
+   static — no per-frame full-viewport repaint. */
 .gradient-bg {
-  background: linear-gradient(
-    125deg,
-    var(--color-gradient-a) 0%,
-    var(--color-gradient-d) 20%,
-    var(--color-gradient-b) 40%,
-    var(--color-gradient-c) 60%,
-    var(--color-gradient-d) 80%,
-    var(--color-gradient-a) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 14s ease infinite;
+  background:
+    radial-gradient(
+      120% 80% at 50% -10%,
+      var(--color-gradient-d) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      160deg,
+      var(--color-gradient-a) 0%,
+      var(--color-gradient-b) 45%,
+      var(--color-gradient-c) 70%,
+      var(--color-gradient-a) 100%
+    );
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100%;
 }
