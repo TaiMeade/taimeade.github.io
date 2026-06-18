@@ -25,6 +25,14 @@ const routes = [
     component: () => import('@/views/ServicesView.vue'),
     meta: { title: 'Services — Tai Meade' },
   },
+  {
+    // Shareable private link sent to clients after a project — intentionally
+    // not linked from the nav.
+    path: '/review',
+    name: 'review',
+    component: () => import('@/views/ReviewView.vue'),
+    meta: { title: 'Leave a Review — Tai Meade' },
+  },
   // Catch-all — redirect old routes and any unknown paths to home
   {
     path: '/:pathMatch(.*)*',

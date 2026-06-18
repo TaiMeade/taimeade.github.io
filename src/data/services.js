@@ -1,10 +1,13 @@
 // `startingPrice` is shown as the indicative starting rate. Set it to `null`
 // for services priced per project — the card then shows "Contact for a quote".
+// `reviewLabel` is the short name used in the /review form's service dropdown
+// (and the badge on review cards); it falls back to `title` if omitted.
 export const services = [
   {
     id: 1,
     icon: 'mdi-web',
     title: 'Static Website Creation',
+    reviewLabel: 'Web Design',
     description:
       'Fast, responsive websites built to make your business or project look professional online — from a single landing page to a full multi-page site.',
     startingPrice: 'from $300',
@@ -20,6 +23,7 @@ export const services = [
     id: 2,
     icon: 'mdi-wrench',
     title: 'Website Maintenance',
+    reviewLabel: 'Website Maintenance',
     description:
       'Keep your existing site current and healthy. Ongoing updates, fixes, and small improvements so you never have to worry about it going stale.',
     startingPrice: 'from $30/mo',
@@ -36,6 +40,7 @@ export const services = [
     id: 3,
     icon: 'mdi-cog-sync',
     title: 'Automation Scripting & Improvements',
+    reviewLabel: 'Automation',
     description:
       'Custom scripts that take repetitive, manual work off your plate — from data entry and reporting to file processing and integrations.',
     startingPrice: null, // priced per project — shows "Want a Quote?"

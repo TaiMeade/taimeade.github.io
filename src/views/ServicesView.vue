@@ -55,6 +55,17 @@
         </div>
       </div>
 
+      <!-- What clients say (only shown once reviews exist) -->
+      <div v-if="reviews.length" class="flex flex-col gap-6 mt-4">
+        <div>
+          <p class="section-label">Kind words</p>
+          <h2 class="section-heading">What clients say</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ReviewCard v-for="review in reviews" :key="review.id" :review="review" />
+        </div>
+      </div>
+
       <!-- Back link -->
       <div>
         <button class="back-btn" @click="router.push('/')">
@@ -69,8 +80,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { services } from '@/data/services.js'
+import { reviews } from '@/data/reviews.js'
 import { useContactModal } from '@/composables/useContactModal'
 import TechChip from '@/components/shared/TechChip.vue'
+import ReviewCard from '@/components/shared/ReviewCard.vue'
 
 const router = useRouter()
 const { open: openContact } = useContactModal()
