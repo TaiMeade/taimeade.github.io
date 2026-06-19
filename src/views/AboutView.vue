@@ -73,15 +73,6 @@
               <p class="text-[color:var(--color-text-secondary)] text-sm mt-1">
                 Dean's Scholar Award — Computer Science
               </p>
-              <a
-                href="/docs/RadfordDiploma.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 mt-3 text-sm accent-link"
-              >
-                <v-icon size="16">mdi-file-certificate-outline</v-icon>
-                View Diploma
-              </a>
             </div>
           </div>
 

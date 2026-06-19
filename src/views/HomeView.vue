@@ -95,10 +95,7 @@
               <p class="text-[color:var(--color-text-secondary)] text-sm mt-0.5">B.S. Computer Science · 2023 – 2025</p>
               <p class="text-[color:var(--color-accent)] text-sm font-medium mt-1">GPA: 4.0</p>
               <p class="text-[color:var(--color-text-secondary)] text-sm mt-1">Dean's Scholar Award — Computer Science</p>
-              <a href="/docs/RadfordDiploma.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 mt-3 text-sm accent-link">
-                <v-icon size="16">mdi-file-certificate-outline</v-icon>
-                View Diploma
-              </a>
+              
             </div>
           </div>
           <div class="border-t border-[color:var(--color-glass-border)] my-4" />
