@@ -43,23 +43,23 @@ export const projects = [
     id: 5,
     title: 'Mountain Empire Septic Service',
     description:
-      'A professional business website for a locally owned septic service company in Southwest Virginia. Features service listings, a coverage map, Google reviews integration, and a contact/quote request form.',
+      'A professional business website for a locally owned septic service company in Southwest Virginia. Features service listings, reviews, and a contact/quote request form.',
     image: '/images/mountain-empire-septic-service.png',
-    chips: ['Vue', 'CSS', 'JavaScript'],
+    chips: ['Vue', 'Vuetify', 'JavaScript'],
     category: 'website',
     githubUrl: null,
     liveUrl: 'https://www.mountainempiresepticservice.com/',
   },
   {
     id: 6,
-    title: "Gravely's Grading Service",
+    title: "Legacy Pool Co.",
     description:
-      'A professional business website for a locally owned grading service company in Southwest Virginia. Features service listings, a coverage map, Google reviews integration, and a contact/quote request form.',
-    image: '/images/gravely-grading.png',
-    chips: ['Vue', 'CSS', 'JavaScript'],
+      'A professional business website for a locally owned pool maintenance company in Yuma, Arizona. Features service listings, reviews, and a contact/quote request form.',
+    image: '/images/legacy-pool-co.png',
+    chips: ['Vue', 'Vuetify', 'JavaScript'],
     category: 'website',
     githubUrl: null,
-    liveUrl: 'https://taimeade.github.io/gravely-grading',
+    liveUrl: 'https://www.legacypoolco.com/',
   },
 ]
 
