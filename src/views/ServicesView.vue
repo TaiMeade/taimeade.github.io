@@ -57,9 +57,16 @@
 
       <!-- What clients say (only shown once reviews exist) -->
       <div v-if="reviews.length" class="flex flex-col gap-6 mt-4">
-        <div>
-          <p class="section-label">Kind words</p>
-          <h2 class="section-heading">What clients say</h2>
+        <div class="reviews-header">
+          <div>
+            <p class="section-label">Kind words</p>
+            <h2 class="section-heading">What clients say</h2>
+          </div>
+          <div class="rating-tally" role="img" :aria-label="`Average rating ${averageRating.toFixed(1)} out of 5 from ${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}`">
+            <StarRating :model-value="Math.round(averageRating)" readonly :size="18" />
+            <span class="tally-score">{{ averageRating.toFixed(1) }}</span>
+            <span class="tally-count">{{ reviews.length }} {{ reviews.length === 1 ? 'review' : 'reviews' }}</span>
+          </div>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ReviewCard v-for="review in reviews" :key="review.id" :review="review" />
@@ -78,15 +85,22 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { services } from '@/data/services.js'
 import { reviews } from '@/data/reviews.js'
 import { useContactModal } from '@/composables/useContactModal'
 import TechChip from '@/components/shared/TechChip.vue'
 import ReviewCard from '@/components/shared/ReviewCard.vue'
+import StarRating from '@/components/shared/StarRating.vue'
 
 const router = useRouter()
 const { open: openContact } = useContactModal()
+
+// Aggregate tally shown beside the "What clients say" heading.
+const averageRating = computed(() =>
+  reviews.length ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length : 0
+)
 </script>
 
 <style scoped>
@@ -109,6 +123,38 @@ const { open: openContact } = useContactModal()
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
+}
+
+/* Reviews header: heading on the left, aggregate tally on the right */
+.reviews-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.rating-tally {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+}
+.tally-score {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+.tally-count {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding-left: 0.6rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-card {
