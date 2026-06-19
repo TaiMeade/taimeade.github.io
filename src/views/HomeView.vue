@@ -269,9 +269,9 @@ const skillGroups = [
   { label: 'Languages',    icon: 'mdi-code-tags',       items: ['Python', 'Java', 'HTML', 'JavaScript', 'TypeScript', 'C#', 'Rust', 'C'] },
   { label: 'Frontend',     icon: 'mdi-monitor-shimmer', items: ['Vue 3', 'Vuetify', 'Tailwind CSS'] },
   { label: 'Backend',      icon: 'mdi-server-outline',  items: ['.NET'] },
-  { label: 'Databases',    icon: 'mdi-database-outline',items: ['SQL Server', 'SQLite', 'Prisma', 'IndexedDB'] },
+  { label: 'Databases',    icon: 'mdi-database-outline',items: ['SQL Server', 'SQLite', 'IndexedDB'] },
   { label: 'Tools & Cloud',icon: 'mdi-tools',           items: ['Azure', 'Git/GitHub'] },
-  { label: 'Other',        icon: 'mdi-layers-outline',  items: ['Electron', 'Streamlit', 'Agile / Scrum'] },
+  { label: 'Other',        icon: 'mdi-layers-outline',  items: ['Electron', 'Streamlit', 'Agile / Scrum', 'Android', 'Bash'] },
 ]
 
 // ─── Projects ──────────────────────────────────────────────

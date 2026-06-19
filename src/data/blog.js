@@ -13,7 +13,16 @@
  *   tags        — Array of tag strings
  *   load        — Dynamic import returning the raw markdown string
  */
-export const posts = [
+export const posts = [  
+  {
+    slug: 'my-new-website',
+    title: 'My New Website',
+    description:
+      'The story behind this new personal website, the technologies I used to build it, and some of the lessons I learned along the way.',
+    date: '2026-06-18',
+    tags: ['personal', 'web development', 'reflection'],
+    load: () => import('../posts/my-new-website.md?raw'),
+  },
   {
     slug: 'getting-married-and-honeymoon',
     title: 'Getting Married and Going on My Honeymoon',

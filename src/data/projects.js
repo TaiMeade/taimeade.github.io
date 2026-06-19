@@ -33,7 +33,7 @@ export const projects = [
     id: 4,
     title: 'Nametag Creator',
     description:
-      'A GUI application that generates formatted nametag PDFs from a CSV file. Built for the NYSC in 2025 to create nametags for all conference delegates.',
+      'A simple GUI application that generates formatted nametag PDFs from a CSV file. Built for the NYSC in 2025 to create nametags for all delegates, guests, and staff (staph).',
     image: '/images/nametag.jpg',
     chips: ['Python', 'Streamlit'],
     category: 'personal',

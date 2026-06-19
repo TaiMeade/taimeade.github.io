@@ -25,7 +25,7 @@ export const experience = [
       'Set up and managed the network infrastructure for the duration of the camp. Assisted with AV setup and management throughout the program.',
     startDate: 'Summer 2025',
     endDate: 'Summer 2025',
-    location: 'Bartow, WV',
+    location: 'Davis, WV',
     skills: ['Networking', 'AV Setup', 'IT Support'],
   },
   {
